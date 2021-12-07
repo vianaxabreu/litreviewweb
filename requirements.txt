@@ -1,0 +1,39 @@
+# packaging
+pip>=9
+setuptools>=26
+twine
+wheel>=0.29
+
+# data science
+numpy
+pandas
+scikit-learn
+
+# tests/linter
+#black
+#coverage
+#flake8
+#pytest
+#yapf
+
+# API
+#gcsfs
+google-cloud-storage
+Google.Cloud.BigQuery
+#mlflow
+#s3fs
+fastapi
+
+# utilities
+six>=1.14
+#joblib
+##memoized-property
+#termcolor
+#nltk
+unidecode
+#gensim==4.1.2
+#gensim
+streamlit
+uvicorn
+
+# my pack
