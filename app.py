@@ -1,9 +1,9 @@
 import streamlit as st
 import requests
-import pandas as pd
+#import pandas as pd
 #import random
 import time
-from google.cloud import bigquery
+#from google.cloud import bigquery
 from litreview.params import PROJECT_ID, LOCATION, check_table_name
 
 #################
@@ -70,7 +70,7 @@ def icon(icon_name):
 local_css("style.css")
 remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
 
-#icon("search")
+icon("search")
 input_abstract = st.text_input("", placeholder="Please paste the abstract of your paper here")
 input_title = st.text_input("", placeholder="OPTIONAL: What is the title of your paper?")
 input_author = st.text_input("", placeholder="OPTIONAL: Who are the authors of your paper?")
@@ -86,32 +86,16 @@ neighbors = st.number_input(
 )
 button_clicked = st.button("OK")
 
-#params = {'user_input': input_user.split(), 'neighbors': neighbors}
-
-#params = {'user_input': input_user.split(), 'neighbors': neighbors}
 name_url = API_URL + '?user_input=' + input_user + '&neighbors=' + str(
     neighbors)
 if button_clicked:
-    begin = time.time()
-    #api_url
-    #api_local
-    #st.write('time to access the api')
-    start_time = time.time()
+    #begin = time.time()
     response = requests.get(name_url)
     prediction = response.json()
-    end_time = time.time()
-    #end_time - start_time
-    #result = prediction['indices']
-    #prediction["0"][1]
-    start_time = time.time()
-    #client = bigquery.Client(project=PROJECT_ID, location=LOCATION)
-    #prediction
     st.write(
         f"<h1 style='text-align: left; color: #5D6D7E; font-size: 18px;'>Here are {neighbors} nice papers to read:</h1>",
         unsafe_allow_html=True)
     for i in range(neighbors):
-        #data = prediction[i]
-        #prediction[str(i)][0]
         st.write(
             f"<h1 style='text-align: left; color: #ABB2B9; font-size: 19px;'>{prediction[str(i)][0]}</h1>",
             unsafe_allow_html=True)
@@ -123,10 +107,3 @@ if button_clicked:
             unsafe_allow_html=True)
         link = f"https://arxiv.org/pdf/{prediction[str(i)][2]}.pdf"
         st.write(f"[get PDF]({link})")
-    end_time = time.time()
-    #st.write('time to run')
-    #time.time() - begin
-
-#st.write(
-#f"<h1 style='text-align: left; color: #ABB2B9; font-size: 15px;'>{test_df.iloc[i,2]}</h1>",
-#unsafe_allow_html=True)

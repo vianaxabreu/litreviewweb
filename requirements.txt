@@ -18,11 +18,11 @@ scikit-learn
 
 # API
 #gcsfs
-google-cloud-storage
-Google.Cloud.BigQuery
+#google-cloud-storage
+#Google.Cloud.BigQuery
 #mlflow
 #s3fs
-fastapi
+#fastapi
 
 # utilities
 six>=1.14
@@ -34,6 +34,6 @@ unidecode
 #gensim==4.1.2
 #gensim
 streamlit
-uvicorn
+#uvicorn
 
 # my pack
