@@ -70,7 +70,7 @@ def icon(icon_name):
 local_css("style.css")
 remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
 
-icon("search")
+#icon("search")
 input_abstract = st.text_input("", placeholder="Please paste the abstract of your paper here")
 input_title = st.text_input("", placeholder="OPTIONAL: What is the title of your paper?")
 input_author = st.text_input("", placeholder="OPTIONAL: Who are the authors of your paper?")
