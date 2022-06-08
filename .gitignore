@@ -8,4 +8,4 @@ raw_data/
 .env
 .joblib
 *.joblib
-.streamlit
+.streamlit/*
